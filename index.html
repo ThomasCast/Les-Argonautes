@@ -40,9 +40,12 @@
     <p>Réalisé par Jason en Anthestérion de l'an 515 avant JC</p>
   </footer>
   <script type="module">
-    import { initializeApp } from "firebase/app";
-    import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
-    
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyDT-6uGxmzJeJWOxT9jOW9s-v5fR1IEes0",
       authDomain: "argonaute-50c0d.firebaseapp.com",
@@ -51,7 +54,8 @@
       messagingSenderId: "106917363322",
       appId: "1:106917363322:web:343991b0eb0b1f0e5145c3"
     };
-
+  
+    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = firebase.firestone();
     db.settings({timestampInSnapshots: true});
