@@ -15,10 +15,3 @@ function addMember(event) {
   listMember.appendChild(memberDiv);
   listInput.value = "";
 }
-
-
-const member = db.collection("members").get().then((snap) =>{
-  snap.docs.forEach(doc => {
-    console.log(doc.data())
-  });
-})

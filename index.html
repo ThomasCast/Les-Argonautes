@@ -40,27 +40,32 @@
     <p>Réalisé par Jason en Anthestérion de l'an 515 avant JC</p>
   </footer>
   <script type="module">
-    import { initializeApp } from 'firebase/app';
-    import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-
+    import { initializeApp } from "firebase/app";
+    import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+    
     const firebaseConfig = {
-        apiKey: "AIzaSyDT-6uGxmzJeJWOxT9jOW9s-v5fR1IEes0",
-        authDomain: "argonaute-50c0d.firebaseapp.com",
-        projectId: "argonaute-50c0d",
-        storageBucket: "argonaute-50c0d.appspot.com",
-        messagingSenderId: "106917363322",
-        appId: "1:106917363322:web:343991b0eb0b1f0e5145c3"
-      };
+      apiKey: "AIzaSyDT-6uGxmzJeJWOxT9jOW9s-v5fR1IEes0",
+      authDomain: "argonaute-50c0d.firebaseapp.com",
+      projectId: "argonaute-50c0d",
+      storageBucket: "argonaute-50c0d.appspot.com",
+      messagingSenderId: "106917363322",
+      appId: "1:106917363322:web:343991b0eb0b1f0e5145c3"
+    };
 
     const app = initializeApp(firebaseConfig);
     const db = firebase.firestone();
     db.settings({timestampInSnapshots: true});
-
-    import { collection, getDocs } from "firebase/firestore"; 
-
+    
+    // import { collection, getDocs } from "firebase/firestore"; 
+    
     const querySnapshot = await getDocs(collection(db, "users"));
     querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data()}`);
+    });
+
+    const members = db.collection("members").get()
+    members.then((snap) =>{
+    console.log(snap.docs)
     });
   </script>
   <script src="/script.js"></script>
